@@ -8,3 +8,26 @@ def call(String dockerHubUsername, String imageName) {
         sh "docker push ${dockerHubUsername}/${imageName}:latest"
     }
 }
+
+
+
+// #add inside parameter
+//  string(name: 'DOCKER_HUB_USERNAME', defaultValue: 'sevenajay', description: 'Docker Hub Username')
+//  string(name: 'IMAGE_NAME', defaultValue: 'youtube', description: 'Docker Image Name')
+// #stage
+// stage('Docker Build'){
+//         when { expression { params.action == 'create'}}
+//             steps{
+//                 script{
+//                    def dockerHubUsername = params.DOCKER_HUB_USERNAME
+//                    def imageName = params.IMAGE_NAME
+//                    dockerBuild(dockerHubUsername, imageName)
+//                 }
+//             }
+//         }
+//         stage('Trivy iamge'){
+//         when { expression { params.action == 'create'}}
+//             steps{
+//                 trivyImage()
+//             }
+//         }
