@@ -1,4 +1,8 @@
 def call(String dockerHubUsername, String imageName) {
+    // First login to docker hub to run pull and push 
+    // Sensitive data type so i wont push to herer 
+       // run command: docker login -u <username> then enter ypur password  
+    
     // Build the Docker image
     sh "docker build --build-arg REACT_APP_RAPID_API_KEY=cffb97183cmshb2049eacbc0dfc9p1d5ea9jsned43366c7585 -t ${imageName} ."
      // Tag the Docker image
